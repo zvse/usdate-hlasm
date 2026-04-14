@@ -1,4 +1,4 @@
-*.HLASM linguist-language=HLASM
-*.HLASM linguist-detectable=true
-*.HLASM linguist-documentation=false
-*.HLASM linguist-generated=false
+**/*.HLASM linguist-language=HLASM
+**/*.HLASM linguist-detectable=true
+**/*.HLASM linguist-documentation=false
+**/*.HLASM linguist-generated=false
