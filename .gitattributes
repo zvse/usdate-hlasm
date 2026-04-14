@@ -1,1 +1,2 @@
 *.HLASM linguist-language=HLASM
+*.HLASM linguist-detectable=true
