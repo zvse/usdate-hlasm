@@ -1,0 +1,22 @@
+USDATE   START 0                                                      
+         BAKR  14,0              * SAVE CALLING PGM STATUS            
+         LR    12,15             * SET BASE REGISTERS                 
+         USING USDATE,12                                              
+*                                                                     
+         L     R2,0(1)           * R1 POINTS TO PARM LIST             
+*                                                                     
+         COMRG                   * GET THE COMREG ADDRESS INTO R1     
+*                                * NOW FORMAT THE DATE AS MM/DD/YY    
+*                                                                     
+         MVC   0(2,R2),79(R1)    * MOVE THE MONTH TO POSITION 1-2     
+         MVI   2(R2),C'/'        * ADD A SLASH SEPERATOR              
+         MVC   3(2,R2),81(R1)    * ADD THE DAY TO POSITION 4-5        
+         MVI   5(R2),C'/'        * ADD A SLASH SEPERATOR              
+         MVC   6(2,R2),=C'20'    * MOVE THE CENTURY IN POS 7-8        
+         MVC   8(2,R2),83(R1)    * MOVE THE YEAR TO POS 9-10          
+*                                                                     
+         PR                      * RETURN TO RPG                      
+*                                                                     
+R1       EQU   1                                                      
+R2       EQU   2                                                      
+         END    
